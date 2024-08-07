@@ -20,9 +20,14 @@ public class HibernateJpaApplication {
 		return runner->{
 			//createStudent(studentDAO);
 //			createMultipleStudents(studentDAO);
-			readStudent(studentDAO);
+//			readStudent(studentDAO);
+			findAllStudents(studentDAO);
 		};
 
+	}
+
+	private void findAllStudents(StudentDAO studentDAO) {
+		System.out.println("The retrieved students list are: "+studentDAO.findAll());
 	}
 
 	private void readStudent(StudentDAO studentDAO) {
