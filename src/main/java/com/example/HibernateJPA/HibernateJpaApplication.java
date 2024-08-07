@@ -19,13 +19,13 @@ public class HibernateJpaApplication {
 
 		return runner->{
 			//createStudent(studentDAO);
-//			createMultipleStudents(studentDAO);
+			createMultipleStudents(studentDAO);
 //			readStudent(studentDAO);
 //			findAllStudents(studentDAO);
 //			findByLastName(studentDAO);
 //			update(studentDAO);
 //			delete(studentDAO);
-			deleteAll(studentDAO);
+//			deleteAll(studentDAO);
 		};
 
 	}
