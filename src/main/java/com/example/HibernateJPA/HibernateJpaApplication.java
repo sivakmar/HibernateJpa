@@ -21,9 +21,36 @@ public class HibernateJpaApplication {
 			//createStudent(studentDAO);
 //			createMultipleStudents(studentDAO);
 //			readStudent(studentDAO);
-			findAllStudents(studentDAO);
+//			findAllStudents(studentDAO);
+//			findByLastName(studentDAO);
+//			update(studentDAO);
+//			delete(studentDAO);
+			deleteAll(studentDAO);
 		};
 
+	}
+
+	private void deleteAll(StudentDAO studentDAO) {
+		studentDAO.deleteAll();
+	}
+
+	private void delete(StudentDAO studentDAO) {
+		int id=5;
+		studentDAO.delete(id);
+		System.out.println("Record Deleted");
+	}
+
+	private void update(StudentDAO studentDAO) {
+		int id=5;
+		Student retrievedStudent=studentDAO.findById(id);
+		System.out.println("Found student: "+ retrievedStudent);
+		retrievedStudent.setEmail("newemail@gmail.com");
+		System.out.println("Updated student details: "+retrievedStudent);
+		studentDAO.update(retrievedStudent);
+	}
+
+	private void findByLastName(StudentDAO studentDAO) {
+		System.out.println("The retrieved students are: "+studentDAO.findByLastName("Carl"));
 	}
 
 	private void findAllStudents(StudentDAO studentDAO) {
